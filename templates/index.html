@@ -1,0 +1,26 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+<!-- hero area -->
+<div class="hero-area hero-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 offset-lg-2 text-center">
+        <div class="hero-text">
+          <div class="hero-text-tablecell">
+            <p class="subtitle">Personal Gaming Assistent</p>
+            <img src="{% static 'img/LOR_logo_vert.png' %}" alt="" />
+            <div class="hero-btns">
+              <a href="{% url 'gallery' %}" class="boxed-btn">CARDS GALLERY</a>
+              <a href="{% url 'collection' %}" class="bordered-btn"
+                >DECKS COLLECTION</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end hero area -->
+{% include 'partials/footer.html' %}{% endblock %}
+
+<!-- end copyright -->

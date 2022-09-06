@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<span></span>
+{% include 'partials/title.html' %}
+<span></span>
+
+<div class="wrapper">
+  <br><br><br>
+  {% if cards %}
+  <h2>
+    <strong>Found Cards</strong>
+  </h2>
+  <div style="padding-bottom: 300px;" class="cards">
+    {% for card in cards %}
+    <a href="{% url 'card' card.id %}">
+      <figure class="card">
+        <img src="{{card.imgPath}}" />
+      <figcaption></figcaption>
+    </figure>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <h3 style="padding-bottom: 500px; color: white; text-align: center;">No card was found</h3>
+  
+  </div>
+  {% endif %}
+
+    {% include 'partials/footer.html' %}{% endblock %}
+  </div>
+</div>
