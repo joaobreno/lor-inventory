@@ -28,7 +28,11 @@
     </strong>
   </h2>
   <div style="padding-bottom: 100px;" class="cards">
+<<<<<<< HEAD
     {% for card in cards %} {% if card.supertype == 'Champion' and card.collectible == 'True' %}
+=======
+    {% for card in cards %} {% if card.supertype == 'Champion' and card.collectible == 'true' %}
+>>>>>>> 95b4d701 (correção gitignore)
     <a href="{% url 'card' card.id %}">
       <figure class="card">
         <img src="{{card.imgPath}}" />
@@ -57,7 +61,11 @@
       </strong>
     </h2>
     <div style="padding-bottom: 100px;" class="cards">
+<<<<<<< HEAD
       {% for card in cards %} {% if card.supertype != 'Champion' and card.collectible == 'True' %}
+=======
+      {% for card in cards %} {% if card.supertype != 'Champion' and card.collectible == 'true' %}
+>>>>>>> 95b4d701 (correção gitignore)
       <a href="{% url 'card' card.id %}">
         <figure class="card">
           <img src="{{card.imgPath}}" />

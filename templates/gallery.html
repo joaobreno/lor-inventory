@@ -4,15 +4,24 @@
 <span></span>
 
 <div class="wrapper">
+<<<<<<< HEAD
   <br>
   <h2>
     <strong>Filters</strong>
   </h2>
   <br>
+=======
+  <br />
+  <h2>
+    <strong>Filters</strong>
+  </h2>
+  <br />
+>>>>>>> 95b4d701 (correção gitignore)
   {% include 'partials/filter.html' %}
   <h2>
     <strong>All Champions</strong>
   </h2>
+<<<<<<< HEAD
   <div style="padding-bottom: 100px;" class="cards">
     {% for card in cards %} {% if card.supertype == 'Champion' and card.collectible == 'True' %}
     <a href="{% url 'card' card.id %}">
@@ -24,10 +33,24 @@
     {% endif %}{% endfor %}
   </div>
   <br><br>
+=======
+  <div style="padding-bottom: 100px" class="cards">
+    {% for card in cards %} {% if card.supertype == "Champion" and card.collectible == "true" %}
+    <a href="{% url 'card' card.id %}">
+      <figure class="card">
+        <img src="{{card.imgPath}}" />
+        <figcaption></figcaption>
+      </figure>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+  <br /><br />
+>>>>>>> 95b4d701 (correção gitignore)
   <div class="wrapper">
     <h2>
       <strong>All Cards</strong>
     </h2>
+<<<<<<< HEAD
     <div style="padding-bottom: 100px;" class="cards">
       {% for card in cards %} {% if card.supertype != 'Champion' and card.collectible == 'True' %}
       <a href="{% url 'card' card.id %}">
@@ -35,10 +58,20 @@
           <img src="{{card.imgPath}}" />
         <figcaption></figcaption>
       </figure>
+=======
+    <div style="padding-bottom: 300px" class="cards">
+      {% for card in cards %} {% if card.supertype != "Champion" and card.collectible == "true" %}
+      <a href="{% url 'card' card.id %}">
+        <figure class="card">
+          <img src="{{card.imgPath}}" />
+          <figcaption></figcaption>
+        </figure>
+>>>>>>> 95b4d701 (correção gitignore)
       </a>
       {% endif %}{% endfor %}
     </div>
 
+<<<<<<< HEAD
     <!-------
   <h2><strong>What's new?</strong></h2>
 
@@ -75,6 +108,8 @@
 
   -->
  
+=======
+>>>>>>> 95b4d701 (correção gitignore)
     {% include 'partials/footer.html' %}{% endblock %}
   </div>
 </div>

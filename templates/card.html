@@ -1,10 +1,15 @@
 {% extends 'base_cardPage.html' %} {% load static %} {% block content %}
 
+<<<<<<< HEAD
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+=======
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation" style="justify-content: start;">
+>>>>>>> 95b4d701 (correção gitignore)
   <div class="navbar-brand">
     <a class="navbar-item" href="{% url 'index' %}">
       <img src="{% static 'img/LOR_logo_hor.png' %}" width="112" height="28">
     </a>
+<<<<<<< HEAD
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
@@ -29,6 +34,23 @@
 
   <body style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
   url('/static/img/backgrounds/{{cardSelected.getRegion.0}}.jpg');background-size: cover;">
+=======
+  
+  </div>
+
+  <a  class="navbar-item" style="color: white;" href="{% url 'index' %}">
+        HOME
+  </a>
+
+  <a class="navbar-item" style="color: white;" href="{% url 'gallery' %}">
+        CARD GALLERY
+  </a>
+
+</nav>
+
+  <body style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url('/static/img/backgrounds/{{cardSelected.getRegion.0}}.jpg');background-size: cover;background-color: black;">
+>>>>>>> 95b4d701 (correção gitignore)
     <section >
       <div class="columns" style="padding-bottom: 180px;">
         <div class="column is-one-third">
@@ -42,13 +64,21 @@
                     </div>
                     <ul class="sci">
                       <li>
+<<<<<<< HEAD
                         <a class="button is-small is-danger" href="{{cardSelected.assets.0.gameAbsolutePath}}">CARD VIEW</a>
+=======
+                        <a class="button is-small is-danger" href="{{cardSelected.gameabsolutepath}}">CARD VIEW</a>
+>>>>>>> 95b4d701 (correção gitignore)
                       </li>
                       <li>
                         
                       </li>
                       <li>
+<<<<<<< HEAD
                         <a class="button is-small is-danger" href="{{cardSelected.assets.0.fullAbsolutePath}}">FULL ART</a>
+=======
+                        <a class="button is-small is-danger" href="{{cardSelected.fullabsolutepath}}">FULL ART</a>
+>>>>>>> 95b4d701 (correção gitignore)
                       </li>
                     </ul>
                   </div>

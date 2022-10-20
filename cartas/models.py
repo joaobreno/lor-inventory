@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Set1(models.Model):
+<<<<<<< HEAD
     # Field name made lowercase.
     id = models.AutoField(db_column='Id', primary_key=True)
     # Field name made lowercase.
@@ -15,10 +16,24 @@ class Set1(models.Model):
     # Field name made lowercase.
     regionrefs = models.JSONField(
         db_column='regionRefs', blank=True, null=True)
+=======
+    id = models.IntegerField(primary_key=True)
+    # This field type is a guess.
+    associatedcards = models.TextField(blank=True, null=True)
+    # This field type is a guess.
+    associatedcardrefs = models.TextField(blank=True, null=True)
+    gameabsolutepath = models.TextField(blank=True, null=True)
+    fullabsolutepath = models.TextField(blank=True, null=True)
+    # This field type is a guess.
+    regions = models.TextField(blank=True, null=True)
+    # This field type is a guess.
+    regionrefs = models.TextField(blank=True, null=True)
+>>>>>>> 95b4d701 (correção gitignore)
     attack = models.IntegerField(blank=True, null=True)
     cost = models.IntegerField(blank=True, null=True)
     health = models.IntegerField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+<<<<<<< HEAD
     # Field name made lowercase.
     descriptionraw = models.TextField(
         db_column='descriptionRaw', blank=True, null=True)
@@ -52,6 +67,25 @@ class Set1(models.Model):
     # Field name made lowercase.
     rarityref = models.TextField(db_column='rarityRef', blank=True, null=True)
     subtypes = models.JSONField(blank=True, null=True)
+=======
+    descriptionraw = models.TextField(blank=True, null=True)
+    levelupdescription = models.TextField(blank=True, null=True)
+    levelupdescriptionraw = models.TextField(blank=True, null=True)
+    flavortext = models.TextField(blank=True, null=True)
+    artistname = models.TextField(blank=True, null=True)
+    name = models.TextField(blank=True, null=True)
+    cardcode = models.TextField(blank=True, null=True)
+    # This field type is a guess.
+    keywords = models.TextField(blank=True, null=True)
+    # This field type is a guess.
+    keywordrefs = models.TextField(blank=True, null=True)
+    spellspeed = models.TextField(blank=True, null=True)
+    spellspeedref = models.TextField(blank=True, null=True)
+    rarity = models.TextField(blank=True, null=True)
+    rarityref = models.TextField(blank=True, null=True)
+    # This field type is a guess.
+    subtypes = models.TextField(blank=True, null=True)
+>>>>>>> 95b4d701 (correção gitignore)
     supertype = models.TextField(blank=True, null=True)
     type = models.TextField(blank=True, null=True)
     collectible = models.TextField(blank=True, null=True)
