@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<span></span>
+{% include 'partials/title.html' %}
+<span></span>
+
+<div class="wrapper">
+  <br>
+  <h2>
+    <strong>Filters</strong>
+  </h2>
+  <br>
+  {% include 'partials/filter.html' %}
+  <h2>
+    <strong>All Champions</strong>
+  </h2>
+  <div style="padding-bottom: 100px;" class="cards">
+    {% for card in cards %} {% if card.supertype == 'Champion' and card.collectible == 'true' %}
+    <a href="{% url 'card' card.id %}">
+      <figure class="card">
+        <img src="{{card.imgPath}}" />
+      <figcaption></figcaption>
+    </figure>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+  <br><br>
+  <div class="wrapper">
+    <h2>
+      <strong>All Cards</strong>
+    </h2>
+    <div style="padding-bottom: 100px;" class="cards">
+      {% for card in cards %} {% if card.supertype != 'Champion' and card.collectible == 'true' %}
+      <a href="{% url 'card' card.id %}">
+        <figure class="card">
+          <img src="{{card.imgPath}}" />
+        <figcaption></figcaption>
+      </figure>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+
+    <!-------
+  <h2><strong>What's new?</strong></h2>
+
+  <div class="news">
+    <figure class="article">
+      <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news1.jpg" />
+
+      <figcaption>
+        <h3>New Item</h3>
+
+        <p>
+          In today’s update, two heads are better than one, and three heads are
+          better than that, as the all-new Flockheart’s Gamble Arcana item for
+          Ogre Magi makes its grand debut.
+        </p>
+      </figcaption>
+    </figure>
+
+  
+    <figure class="article">
+      <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png" />
+
+      <figcaption>
+        <h3>Update</h3>
+
+        <p>
+          Just in time for Lunar New Year and the Rat’s time in the cyclical
+          place of honor, the Treasure of Unbound Majesty is now available.
+        </p>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+  -->
+ 
+    {% include 'partials/footer.html' %}{% endblock %}
+  </div>
+</div>

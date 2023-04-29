@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<span></span>
+{% include 'partials/title.html' %}
+<span></span>
+
+<div class="wrapper">
+  <br>
+  <h2>
+    <strong>Filters</strong>
+  </h2>
+  <br>
+  {% include 'partials/filter.html' %}
+  {% if 'Unit' in type or not type %}
+  <h2>
+    <strong>
+      {% if filter %}
+        {% for region in filter %}
+          {% if forloop.counter >= 2 %}
+            /{{region}}
+          {% else %}
+             {{region}}
+          {% endif %}
+        {% endfor %}
+      ㅤChampions
+      {% else %}
+        All Champions
+      {% endif %}
+    </strong>
+  </h2>
+  <div style="padding-bottom: 100px;" class="cards">
+    {% for card in cards %} {% if card.supertype == 'Champion' and card.collectible == 'true' %}
+    <a href="{% url 'card' card.id %}">
+      <figure class="card">
+        <img src="{{card.imgPath}}" />
+      <figcaption></figcaption>
+    </figure>
+    </a>
+    {% endif %}{% endfor %}
+  </div>
+  {% endif %}
+  <br><br>
+  <div class="wrapper">
+    <h2>
+      <strong>
+        {% if filter %}
+          {% for region in filter %}
+            {% if forloop.counter >= 2 %}
+              /{{region}}
+            {% else %}
+              {{region}}
+            {% endif %}
+          {% endfor %}
+        ㅤCards
+        {% else %}
+          All Champions
+        {% endif %}
+      </strong>
+    </h2>
+    <div style="padding-bottom: 100px;" class="cards">
+      {% for card in cards %} {% if card.supertype != 'Champion' and card.collectible == 'true' %}
+      <a href="{% url 'card' card.id %}">
+        <figure class="card">
+          <img src="{{card.imgPath}}" />
+        <figcaption></figcaption>
+      </figure>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+ 
+    {% include 'partials/footer.html' %}{% endblock %}
+  </div>
+</div>

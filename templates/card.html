@@ -1,0 +1,170 @@
+{% extends 'base_cardPage.html' %} {% load static %} {% block content %}
+
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{% url 'index' %}">
+      <img src="{% static 'img/LOR_logo_hor.png' %}" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="{% url 'index' %}">
+        HOME
+      </a>
+
+      <a class="navbar-item" href="{% url 'gallery' %}">
+        CARD GALLERY
+      </a>
+
+    </div>
+  </div>
+</nav>
+
+  <body style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url('/static/img/backgrounds/{{cardSelected.getRegion.0}}.jpg');background-size: cover;">
+    <section >
+      <div class="columns" style="padding-bottom: 180px;">
+        <div class="column is-one-third">
+              <figure class="">
+                <div class="container">
+                  <div class="card">
+                    <div class="content">
+                      <div class="imgBx">
+                        <img src="{{cardSelected.imgPath}}" />
+                      </div>
+                    </div>
+                    <ul class="sci">
+                      <li>
+                        <a class="button is-small is-danger" href="{{cardSelected.gameabsolutepath}}">CARD VIEW</a>
+                      </li>
+                      <li>
+                        
+                      </li>
+                      <li>
+                        <a class="button is-small is-danger" href="{{cardSelected.fullabsolutepath}}">FULL ART</a>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+            </div>
+        <div class="column is-half">
+          <div class="card">
+            <header class="card-header">
+              <!---------- CARD NAME ----------->
+              <p class="card-header-title" style="color:white">
+              {{cardSelected.name}}
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <!---------- REGION TAG ----------->
+                {% if cardSelected.getRegion.0 == 'Demacia' %}
+                  <p>Region:ㅤ<span class="tag" style="background-color:#E0CD95; color: black;"><img src="/static/img/icons/regions/icon-demacia.png" style="max-width: 20px;" alt="">ㅤDemacia</span></p>
+                {% endif %}
+                {% if cardSelected.getRegion.0 == 'Noxus' %}
+                  <p>Region:ㅤ<span class="tag" style="background-color:#CE513A; color: black;"><img src="/static/img/icons/regions/icon-noxus.png" style="max-width: 20px;" alt="">ㅤNoxus</span></p>
+                {% endif %}
+                {% if cardSelected.getRegion.0 == 'Ionia' %}
+                  <p>Region:ㅤ<span class="tag" style="background-color:#CF808B; color: black;"><img src="/static/img/icons/regions/icon-ionia.png" style="max-width: 20px;" alt="">ㅤIonia</span></p>
+                {% endif %}
+                {% if cardSelected.getRegion.0 == 'Piltover & Zaun' %}
+                  <p>Region:ㅤ<span class="tag" style="background-color:#EDA63F; color: black;"><img src="/static/img/icons/regions/icon-piltoverzaun.png" style="max-width: 20px;" alt="">ㅤPiltover & Zaun</span></p>
+                {% endif %}
+                {% if cardSelected.getRegion.0 == 'Freljord' %}
+                  <p>Region:ㅤ<span class="tag" style="background-color:#64DBF9; color: black;"><img src="/static/img/icons/regions/icon-freljord.png" style="max-width: 20px;" alt="">ㅤFreljord</span></p>
+                {% endif %}
+                {% if cardSelected.getRegion.0 == 'Shadow Isles' %}
+                  <p>Region:ㅤ<span class="tag" style="background-color:#20ECB0; color: black;"><img src="/static/img/icons/regions/icon-shadowisles.png" style="max-width: 20px;" alt="">ㅤShadow Isles</span></p>
+                {% endif %}
+
+
+                <!---------- TYPE TAG ----------->
+                {% if cardSelected.type == 'Spell' %}
+                  <p>Type:ㅤ<span class="tag" style="color: black;"><img src="{% static 'img/icons/elements/Spell_card.png' %}" style="max-width: 16px;" alt="">ㅤSpell</span></p>
+                {% endif %}
+                {% if cardSelected.type == 'Unit' and cardSelected.supertype == 'Champion' %}
+                  <p>Type:ㅤ<span class="tag" style="color: black;"><img src="{% static 'img/icons/elements/Champion_card.png' %}" style="max-width: 16px;" alt="">ㅤChampion</span></p>
+                {% endif %}
+                {% if cardSelected.type == 'Unit' and cardSelected.supertype == '' %}
+                  <p>Type:ㅤ<span class="tag" style="color: black;"><img src="{% static 'img/icons/elements/Follower_card.svg' %}" style="max-width: 16px;" alt="">ㅤFollower</span></p>
+                {% endif %}
+
+                <!---------- KEYWORDS TAG ----------->
+                {% if cardSelected.getKeywords %}
+                  <p>Keywords:
+                    {% for word in cardSelected.getKeywords %}
+                    <span>ㅤ<img src="/static/img/icons/keywords/Keyword_{{word}}.png" style="max-width: 16px;" alt="">{{word}}ㅤ</span>
+                    {% endfor %}
+                  </p>
+                {% endif %}
+
+                <!---------- CARD STATS TAG ----------->
+                <p><img src="{% static 'img/icons/elements/LoR_mana.png' %}" style="max-width: 20px;" alt=""> {{cardSelected.cost}}ㅤㅤ
+                  {% if cardSelected.type == 'Unit' %}
+                  <img src="{% static 'img/icons/elements/LoR_Power.png' %}" style="max-width: 16px;" alt=""> {{cardSelected.attack}}ㅤ<img src="{% static 'img/icons/elements/LoR_Health.png' %}" style="max-width: 20px;" alt="">{{cardSelected.health}}</p>
+                  {% endif %}
+
+                <!---------- LINE ----------->
+                {% if cardSelected.getTribe or cardSelected.descriptionraw or cardSelected.levelupdescriptionraw %}
+                <hr>
+                {% endif %}
+
+                <!---------- TRIBE TAG ----------->
+                {% if cardSelected.getTribe %}
+                  <p>Tribe:ㅤ<span>{{cardSelected.getTribe.0}}</span></p>
+                {% endif %}
+
+                <!---------- DESCRIPTION ----------->
+                {% if cardSelected.descriptionraw %}
+                  <p>Description:ㅤ<span>{{cardSelected.descriptionraw}}</span></p>
+                {% endif %}
+
+                <!---------- LEVEL UP DESCRIPTION ----------->
+                {% if cardSelected.levelupdescriptionraw %}
+                  <p>LevelUp:ㅤ<span>{{cardSelected.levelupdescriptionraw}}</span></p>
+                {% endif %}
+
+              </div>
+            </div>
+        </div>
+        <br>
+        <!---------- ASSOCIATED CARDS CONTAINER ----------->
+        {% if cardSelected.getAssociatedCards %}
+        <div class="card" id="exp">
+          <header class="card-header">
+            <p class="card-header-title" style="color:white">
+              Associated Cards 
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <div class="columns is-multiline">                
+                {% for cardAssociated in cardSelected.getAssociatedCards %}                  
+                  {% for card in gallery %}
+                    {% if cardAssociated == card.cardcode %}             
+                      <div class="column is-one-quarter">                        
+                        <a href="{% url 'card' card.id %}">                         
+                          <img src="/static/img/cards/set1/{{cardAssociated}}.png" >                                                 
+                        </a>
+                      </div>                     
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </div> 
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    <br><br><br><br>
+    {% include 'partials/footer.html' %}{% endblock %}
+  </div>
+</div>

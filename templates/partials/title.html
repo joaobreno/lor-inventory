@@ -1,0 +1,47 @@
+{% load static %}
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <!----------- SEARCH PAGE ------------>
+          {% if searchItem %}
+          <p>Search</p>
+          <h1>{{searchItem}}</h1>
+          {% endif %}
+          <!----------- FILTER PAGE ------------>
+          {% if filter %}
+          <p>FILTERED BY</p>
+          {% if type %}
+          {% if 'Unit' in type and 'Spell' in type %}
+          {% else %}
+          <h1 style="font-size: 30px;">{{type.0}}sㅤfrom</h1>
+          {% endif %}
+          {% endif %}
+          <h1>
+            {% for region in filter %}
+              {% if forloop.counter >= 2 %}
+              <span>
+                /{{region}}
+              </span>
+              {% else %}
+                <span>
+                  {{region}}
+                </span>
+              {% endif %}
+            {% endfor %}
+          </h1>
+          {% endif %}
+          <!----------- GALLERY FULL PAGE ------------>
+          {% if not searchItem and not filter %}
+          <p>All Sets</p>
+          <h1>GALLERY</h1>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->

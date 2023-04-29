@@ -1,0 +1,288 @@
+{% load static %}
+
+<div class="section over-hide z-bigger">
+  <div class="section over-hide z-bigger">
+    <div class="container pb-5">
+      <div class="row justify-content-center pb-5">
+        <div class="col-12 pt-5" style="padding-top: 0rem !important">
+          
+        </div>
+        <form action="{% url 'filter_page' %}" method="post">
+          {% csrf_token %}
+          <!------------- REGION FILTER --------------->
+          <div class="col-12 pb-5">
+            <!--
+          -->
+            {% if 'Demacia' in filter %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Demacia"
+              value="Demacia"
+              checked
+            />
+            <label class="for-checkbox-regions" for="Demacia">
+              <img
+                src="{% static 'img/icons/regions/icon-demacia.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              demacia
+            </label>
+            {% else %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Demacia"
+              value="Demacia"
+            />
+            <label class="for-checkbox-regions" for="Demacia">
+              <img
+                src="{% static 'img/icons/regions/icon-demacia.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              demacia
+            </label>
+            {% endif %} {% if 'Noxus' in filter %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Noxus"
+              value="Noxus"
+              checked
+            />
+            <label class="for-checkbox-regions" for="Noxus">
+              <img
+                src="{% static 'img/icons/regions/icon-noxus.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              noxus
+            </label>
+            {% else %}
+            <!--
+          -->
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Noxus"
+              value="Noxus"
+            />
+            <label class="for-checkbox-regions" for="Noxus">
+              <img
+                src="{% static 'img/icons/regions/icon-noxus.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              noxus
+            </label>
+            {% endif %}<!--
+          -->
+            {% if 'Piltover & Zaun' in filter %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Pitover & Zaun"
+              value="Piltover & Zaun"
+              checked
+            />
+            <label class="for-checkbox-regions" for="Pitover & Zaun">
+              <img
+                src="{% static 'img/icons/regions/icon-piltoverzaun.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              P&Z
+            </label>
+            {% else %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Pitover & Zaun"
+              value="Piltover & Zaun"
+            />
+            <label class="for-checkbox-regions" for="Pitover & Zaun">
+              <img
+                src="{% static 'img/icons/regions/icon-piltoverzaun.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              P&Z
+            </label>
+            {% endif %}
+            <!--
+          -->
+            {% if 'Freljord' in filter %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Freljord"
+              value="Freljord"
+              checked
+            />
+            <label class="for-checkbox-regions" for="Freljord">
+              <img
+                src="{% static 'img/icons/regions/icon-freljord.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              freljord
+            </label>
+            {% else %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Freljord"
+              value="Freljord"
+            />
+            <label class="for-checkbox-regions" for="Freljord">
+              <img
+                src="{% static 'img/icons/regions/icon-freljord.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              freljord
+            </label>
+            {% endif %}
+            <!--
+          -->
+            {% if 'Shadow Isles' in filter %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Shadow Isles"
+              value="Shadow Isles"
+              checked
+            />
+            <label class="for-checkbox-regions" for="Shadow Isles">
+              <img
+                src="{% static 'img/icons/regions/icon-shadowisles.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              S.I
+            </label>
+            {% else %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Shadow Isles"
+              value="Shadow Isles"
+            />
+            <label class="for-checkbox-regions" for="Shadow Isles">
+              <img
+                src="{% static 'img/icons/regions/icon-shadowisles.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              S.I
+            </label>
+            {% endif %}
+            <!--
+            -->
+            {% if 'Ionia' in filter %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Ionia"
+              value="Ionia"
+              checked
+            />
+            <label class="for-checkbox-regions" for="Ionia">
+              <img
+                src="{% static 'img/icons/regions/icon-ionia.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              ionia
+            </label>
+            {% else %}
+            <input
+              class="checkbox-regions"
+              type="checkbox"
+              name="regions"
+              id="Ionia"
+              value="Ionia"
+            />
+            <label class="for-checkbox-regions" for="Ionia">
+              <img
+                src="{% static 'img/icons/regions/icon-ionia.png' %}"
+                style="max-width: 50px; color: white"
+              />
+              ionia
+            </label>
+            {% endif %}
+          </div>
+          <!------------- TYPE FILTER --------------->
+          <div class="col-12 pt-1">
+          </div>
+          <div class="col-12 pb-5">
+            {% if 'Unit' in type %}
+            <input
+              class="checkbox-type"
+              type="checkbox"
+              name="type"
+              id="Unit"
+              value="Unit"
+              checked
+            />
+            <label class="for-checkbox-type" for="Unit">
+              <img src="{% static 'img/icons/elements/Follower_card.svg' %}" />
+              <span class="text">ㅤUnit</span></label
+            >
+            {% else %}
+            <input
+            class="checkbox-type"
+            type="checkbox"
+            name="type"
+            id="Unit"
+            value="Unit"
+          />
+          <label class="for-checkbox-type" for="Unit">
+            <img src="{% static 'img/icons/elements/Follower_card.svg' %}" />
+            <span class="text">ㅤUnit</span></label
+          >
+          {% endif %}
+            <!--
+          -->
+          {% if 'Spell' in type %}
+            <input
+              class="checkbox-type"
+              type="checkbox"
+              name="type"
+              id="Spell"
+              value="Spell"
+              checked
+            />
+            <label class="for-checkbox-type" for="Spell">
+              <img src="{% static 'img/icons/elements/Spell_card.png' %}" />
+              <span class="text">ㅤSpell</span> </label
+            >
+            {% else %}
+            <input
+              class="checkbox-type"
+              type="checkbox"
+              name="type"
+              id="Spell"
+              value="Spell"
+            />
+            <label class="for-checkbox-type" for="Spell">
+              <img src="{% static 'img/icons/elements/Spell_card.png' %}" />
+              <span class="text">ㅤSpell</span> </label
+            >
+            {% endif %}<!--
+          -->
+          </div>
+        </div>
+          <button style="border: inherit; background-color:#24282f;" type="submit">
+            <div>
+              <a class="bordered-btn">FILTER</a>
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
