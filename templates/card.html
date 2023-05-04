@@ -1,15 +1,9 @@
 {% extends 'base_cardPage.html' %} {% load static %} {% block content %}
 
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
+  <div class="navbar-brand" style="display:contents;">
     <a class="navbar-item" href="{% url 'index' %}">
       <img src="{% static 'img/LOR_logo_hor.png' %}" width="112" height="28">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
     </a>
   </div>
 
